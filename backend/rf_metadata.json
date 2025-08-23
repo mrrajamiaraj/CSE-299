@@ -1,0 +1,34 @@
+{
+  "target": "Diagnosis",
+  "classes": [
+    "Healthy",
+    "Iron deficiency anemia",
+    "Leukemia",
+    "Leukemia with thrombocytopenia",
+    "Macrocytic anemia",
+    "Normocytic hypochromic anemia",
+    "Normocytic normochromic anemia",
+    "Other microcytic anemia",
+    "Thrombocytopenia"
+  ],
+  "features": [
+    "WBC",
+    "LYMp",
+    "NEUTp",
+    "LYMn",
+    "NEUTn",
+    "RBC",
+    "HGB",
+    "HCT",
+    "MCV",
+    "MCH",
+    "MCHC",
+    "PLT",
+    "PDW",
+    "PCT"
+  ],
+  "test_metrics": {
+    "accuracy": 0.9844357976653697,
+    "f1_macro": 0.9458903296889566
+  }
+}
