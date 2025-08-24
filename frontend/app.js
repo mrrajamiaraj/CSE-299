@@ -2,7 +2,7 @@
 // ==== Set your API base URL ====
 // For local testing: "http://127.0.0.1:8000"
 // After deploy (Render/Railway), replace with your backend URL
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "https://cbc-api.fly.dev";
 
 const form = document.getElementById("cbc-form");
 const resultBlock = document.getElementById("result");
