@@ -8,7 +8,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-# ---- Load artifacts (place your trained files in the backend folder) ----
+
 MODEL_FP = os.getenv("MODEL_PATH", "rf_blood_model.joblib")
 LE_FP    = os.getenv("LE_PATH", "rf_label_encoder.joblib")
 META_FP  = os.getenv("META_PATH", "rf_metadata.json")
@@ -23,7 +23,7 @@ try:
 except Exception as e:
     raise RuntimeError(f"Could not load label encoder from {LE_FP}: {e}")
 
-# Load metadata if present; otherwise fall back to known feature order
+
 DEFAULT_FEATURES = ["WBC","LYMp","NEUTp","LYMn","NEUTn","RBC","HGB","HCT","MCV","MCH","MCHC","PLT","PDW","PCT"]
 try:
     with open(META_FP, "r") as f:
@@ -36,7 +36,7 @@ except Exception:
     CLASSES  = list(label_encoder.classes_)
     TARGET   = "Diagnosis"
 
-# ---- FastAPI app + CORS ----
+
 app = FastAPI(title="CBC Random Forest Predictor", version="1.0")
 
 app.add_middleware(

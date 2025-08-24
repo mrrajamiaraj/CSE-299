@@ -1,7 +1,4 @@
 
-// ==== Set your API base URL ====
-// For local testing: "http://127.0.0.1:8000"
-// After deploy (Render/Railway), replace with your backend URL
 const API_BASE_URL = "https://cbc-api.fly.dev";
 
 const form = document.getElementById("cbc-form");
@@ -18,7 +15,7 @@ modalClose.addEventListener("click", () => modal.classList.add("hidden"));
 window.addEventListener("click", (e) => { if (e.target === modal) modal.classList.add("hidden"); });
 
 function tableFromProbabilities(probas) {
-  // probas: {class: number}
+  
   const entries = Object.entries(probas).sort((a,b) => b[1] - a[1]);
   const rows = entries.map(([cls, p]) => `<tr><td>${cls}</td><td>${(p*100).toFixed(1)}%</td></tr>`).join("");
   return `<table class="table"><thead><tr><th>Class</th><th>Confidence</th></tr></thead><tbody>${rows}</tbody></table>`;
