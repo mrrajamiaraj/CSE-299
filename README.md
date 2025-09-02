@@ -27,7 +27,7 @@ python -m venv .venv
 pip install -r requirements.txt
 uvicorn main:app --host 0.0.0.0 --port 8000
 ```
-Open: http://127.0.0.1:8000/health
+Open: http://127.0.0.1:8000
 
 ## 4) Open frontend
 - Edit `frontend/app.js` and set `API_BASE_URL` accordingly.
